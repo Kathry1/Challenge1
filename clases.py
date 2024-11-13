@@ -1,4 +1,3 @@
-# tablero.py
 import numpy as np
 import random
 from variables import DIMENSIONES_TABLERO, BARCOS
