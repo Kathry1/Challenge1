@@ -87,16 +87,18 @@ class Tablero:
             if self.tablero[pieza] == "O" or self.tablero[pieza] == "X":
                 #print(f"No puedo poner la pieza {pieza} porque hay otro barco")
                 return False
-            tablero_temp[pieza] = "0"
+            tablero_temp[pieza] = "O"
         return tablero_temp
 
 
-    def disparo(self, fila, columna):
+    def recibir_disparo(self, fila, columna):
         if self.tablero[fila, columna] == "O":
             self.disparos[fila, columna] = "X"
+            self.tablero[fila, columna] = "X"
             return True
         else:
             self.disparos[fila, columna] = "-"
+            self.tablero[fila, columna] = "-"
             return False
 
 
