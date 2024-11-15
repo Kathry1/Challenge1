@@ -78,18 +78,31 @@ if __name__ == "__main__":
         while not juego_terminado:
 
             if turno == "Jugador":
-                print("\n\nTurno del:",tab_humano.jugador_id)
-                # Pedir coordenadas al jugador
-                respuesta = input("Introduce las coordenadas (fila columna) separadas por espacio o 'q' para salir: " )
-                if respuesta.lower() == 'q':
+                print("\nTurno del:", tab_humano.jugador_id)
+                while True:
+                    try:
+                        respuesta = input("Introduce las coordenadas (fila columna) separadas por espacio o 'q' para salir: ")
+                        if respuesta.lower() == 'q':
+                            juego_terminado = True
+                            break
+                        fila, columna = map(int, respuesta.split())  
+                        if 0 <= fila < tab_humano.dimension and 0 <= columna < tab_humano.dimension:  
+                            break
+                        else:
+                            print(f"Las coordenadas deben estar entre 0 y {tab_humano.dimension - 1}.")
+                    except ValueError:
+                        print("Entrada inválida. Por favor, introduce dos números separados por espacio.")
+
+                if juego_terminado:
                     break
-                fila, columna = map(int, respuesta.split())
+
                 impacto = tab_maquina.recibir_disparo(fila, columna)
                 if impacto:
-                    print("\n\n¡Impacto! :) ")
+                    print("\n¡Impacto! :)")
                 else:
-                    print("\n\nAgua :( ")
+                    print("\nAgua :( ")
                     turno = "Máquina"
+
             else:
                 # Turno de la máquina
                 print("\n\nTurno de la maquina")
