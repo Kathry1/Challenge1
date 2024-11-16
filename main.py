@@ -1,5 +1,5 @@
+#main.py
 
-# main.py
 import numpy as np
 from clases import Tablero
 
@@ -20,14 +20,14 @@ if __name__ == "__main__":
     print("  ╚╝  ╚═══╝╚╝╚╝╚╝  ╚╝  ╚═══╝╚══╝╚══╝╚═══╝╚═══╝╚╝ ╚╝   ╚╝╚╝╚══╝╚╝ ╚╝╚═══╝")
     print("")
     print("------------------------------------------------------------------------")
-    print("                ¡¡Bienvedid@s a nuestro Team Challenge!!")
-    print("                        ¿Echamos una partidita?")
+    print("                ¡¡Bienvedid@s a Hundir la Flota!!")
+    print("            ¿Echamos una partidita? Sigue las instrucciones")
     print("------------------------------------------------------------------------")
     print("")
     print("")
     
     #Cuando arranque el programa, primero pon algún mensaje de bienvenida y las instrucciones del juego.
-    print("\n\nBienvenido al juego Hundir la Flota\n\nEstas son las instrucciones del juego:\n(1)blablabla\n(2)blablabla\n(3)blablabla\n")
+    # print("\n\nBienvenido al juego Hundir la Flota\n\nEstas son las instrucciones del juego:\n(1)blablabla\n(2)blablabla\n(3)blablabla\n")
     
     accion = input("Pulse Enter para jugar o 'q' para salir: ")
     if accion.lower() != 'q':

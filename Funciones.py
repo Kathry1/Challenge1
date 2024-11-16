@@ -1,3 +1,5 @@
+from clases import *
+import random
 
 def jugar():
     jugador = Tablero("Jugador")
@@ -73,9 +75,12 @@ def selecciona_dificultad():
     except ValueError as e:
         print(e)
         return selecciona_dificultad()
-   
+
 def disparo_maquina(tablero_jugador, dificultad):
     intentos = dificultad
     for _ in range(intentos):
         fila, columna = random.randint(0, 9), random.randint(0, 9)
         recibir_disparo(tablero_jugador, fila, columna)
+
+def pausa():
+    input("Pulsa ENTER para continuar...")
