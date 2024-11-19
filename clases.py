@@ -36,8 +36,9 @@ class Tablero:
         num_intentos = 100
         while True:
             if contador >= num_intentos:
-                print("Hemos superado el límite")
-                break
+                print(f"No fue posible colocar un barco de eslora {eslora} tras {num_intentos} intentos.")
+                return False
+
             contador += 1
             barco = []
             # Construimos el hipotetico barco
@@ -92,6 +93,11 @@ class Tablero:
 
 
     def recibir_disparo(self, fila, columna):
+        if self.disparos[fila, columna] in ["X", "-"]:
+            # Si ya se disparó en esta celda, no hacer nada.
+            print("Ya has disparado en estas coordenadas.")
+            return None
+
         if self.tablero[fila, columna] == "O":
             self.disparos[fila, columna] = "X"
             self.tablero[fila, columna] = "X"
@@ -100,6 +106,7 @@ class Tablero:
             self.disparos[fila, columna] = "-"
             self.tablero[fila, columna] = "-"
             return False
+
 
 
 

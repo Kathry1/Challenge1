@@ -107,8 +107,14 @@ if __name__ == "__main__":
                 # Turno de la máquina
                 print("\n\nTurno de la maquina")
                 import random
-                fila = random.randint(0, tab_humano.dimension - 1)
-                columna = random.randint(0, tab_humano.dimension - 1)
+
+                # Se controla que la máquina no dispare sobre una coordenada en la que ya ha disparado
+                while True:
+                    fila = random.randint(0, tab_humano.dimension - 1)
+                    columna = random.randint(0, tab_humano.dimension - 1)
+                    if tab_humano.disparos[fila, columna] == " ":
+                        break
+
                 impacto = tab_humano.recibir_disparo(fila, columna)
                 if impacto:
                     print("La máquina hizo impacto en tu tablero :( )")
