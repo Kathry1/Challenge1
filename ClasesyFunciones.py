@@ -106,9 +106,41 @@ class Tablero:
             self.disparos[fila, columna] = "-"
             self.tablero[fila, columna] = "-"
             return False
+        
+    def mostrar_tablero(self, oculto=False):
+        if self.jugador_id == "humano1":
 
+            """Muestra el tablero. Si 'oculto' es True, oculta los barcos del oponente."""
+            # Imprimir encabezado de columnas
+            print("    ", end="")
+            for i in range(DIMENSIONES_TABLERO):
+                print(f"[{i}]", end=" ")  # Índices de columna con corchetes
+            print()
 
+            # Imprimir filas con sus índices
+            for i, fila in enumerate(self.tablero):
+                print(f"[{i}]", end=" ")  # Índices de fila con corchetes
+                for columna in fila:
+                    print(f"[{columna}]", end=" ")  # Imprime el contenido del tablero con corchetes
+                print()  # Salto de línea después de cada fila
 
+        else:
+            """Muestra el tablero. Si 'oculto' es True, oculta los barcos del oponente."""
+            # Imprimir encabezado de columnas
+            print("    ", end="")
+            for i in range(DIMENSIONES_TABLERO):
+                print(f"[{i}]", end=" ")  # Índices de columna con corchetes
+            print()
+
+            # Imprimir filas con sus índices
+            for i, fila in enumerate(self.disparos):
+                print(f"[{i}]", end=" ")  # Índices de fila con corchetes
+                for columna in fila:
+                    print(f"[{columna}]", end=" ")  # Imprime el contenido del tablero con corchetes
+                print()  # Salto de línea después de cada fila
+
+def pausa():
+    input("Pulsa ENTER para continuar...")
 
 
 
