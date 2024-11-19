@@ -10,13 +10,7 @@ class Tablero:
         self.disparos = np.full((self.dimension, self.dimension), " ")
         self.barcos = BARCOS 
         self.barcos_creados = {} # Diccionario que almacena las nombres y las coordenas de las piezas de los barcos
-    '''
-    def inicializar_tablero(self):
-        # Colocar los barcos en el tablero de acuerdo a la configuración
-        for tipo_barco, cantidad in self.barcos.items():
-            for _ in range(cantidad):
-                self.posicionar_barco(int(tipo_barco.split('_')[1]))
-    '''
+
 
     def ini_tablero_alea(self):
         for tipo_barco,datos_barco in self.barcos.items(): # Recorro el diccionario de barcos (clave:valor)
